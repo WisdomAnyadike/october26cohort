@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="values" oninput="search()">
+
+
+    
+</body>
+</html>
+<script>
+
+
+function search(params) {
+    let values = document.getElementById('values')
+    console.log(values.value);
+    
+}
+
+    // foreach map find findIndex some every filter reduce sort : function , array methods , loops
+
+    let array= ['1' , 2, '3' ,'4' ]
+    
+    for (let index = 0; index < array.length; index++) {
+         console.log(array[index]);
+    }
+
+
+    function move() {
+        console.log('i am moving');
+        return 27
+    }
+
+
+    console.log(move());
+    
+    let total = move() + 3
+
+
+   array.forEach(( num , i ) => {
+         console.log(num);
+    });
+
+
+
+
+  let newArray =   array.map(( num , i , arr )=> {
+    console.log(num);
+    return num % 2 === 0
+    })
+    
+    console.log(newArray);
+
+   let foundNumIndex =  array.findIndex(( num , i , arr )=> {
+        console.log(num);
+     return num === 3
+    })
+   
+
+    console.log(foundNumIndex);
+    
+   
+
+
+   let isThereAtLeastOneNumberInTheArray =  array.some((num , i , arr )=> {
+        console.log(num)
+         return typeof num === "number"
+    })
+    
+
+console.log(isThereAtLeastOneNumberInTheArray);
+
+if (isThereAtLeastOneNumberInTheArray) {
+    console.log('there is a number o');
+    
+} else {
+    console.log('chai , no number ');
+    
+}
+
+
+
+
+let isEveryValueGreaterThan2 = array.every((num , i , arr )=> {
+    console.log(num);
+    
+ return num > 2
+})
+
+
+console.log(isEveryValueGreaterThan2);
+
+
+let fruits = ['watermelon' , 'cherry' , 'grape' , 'coconut' , 'mango']
+
+let filteredFruits = fruits.filter(( fruit , i , arr )=> {
+    return fruit.startsWith('ch')
+})
+
+console.log(filteredFruits);
+
+
+let sentence = fruits.reduce(( p , fruit , i , arr )=> {
+       return p + fruit +  (i < fruits.length - 2 ? ' and ' :  ', ')
+} , 'i love ')
+
+
+console.log(sentence);
+
+
+let nums = [3,4,6,7,8,32,344,57] 
+
+console.log(nums.join('+'));
+
+let totalNum = 0
+
+for (let index = 0; index < nums.length; index++) {
+  totalNum = totalNum +  nums[index]
+    
+}
+
+console.log(totalNum);
+
+let myTotal = nums.reduce(( p , c , i , arr)=> { return p * c }  , 1)
+console.log(myTotal);
+
+
+nums.sort(( a , b )=> {  return a - b })
+console.log(nums);
+
+
+
+</script>
