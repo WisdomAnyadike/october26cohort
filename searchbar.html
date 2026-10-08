@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="searchInput" oninput="search()">
+
+    <div id="previewFoods">
+
+
+
+
+    </div>
+    
+
+
+
+
+</body>
+</html>
+<script>
+let previewFoodsDiv = document.getElementById('previewFoods')
+let foods =  [ 'rice', 'beans', 'potato', 'bread', 'chips', 'plantain', 'pap', 'yam',
+        'jollof rice', 'fried rice', 'white rice', 'coconut rice', 'ofada rice',
+        'moi moi', 'akara', 'ewa agoyin', 'dodo', 'boli', 'suya', 'asun']
+
+
+
+   function displayFoods(params) {
+    previewFoodsDiv.innerHTML = ''
+   params.forEach(( food , i , arr )=> {previewFoodsDiv.innerHTML +=  `<p> ${food} </p>`  })
+    //  previewFoodsDiv.innerHTML = params.map((food)=> { return  `<p> ${food} </p>` }).join('')
+   }
+
+  displayFoods(foods)
+
+
+
+  function search() {
+    let searchInput = document.getElementById('searchInput')
+    let searchValue = searchInput.value.trim() 
+    console.log(searchValue);
+
+    let filteredFoods = foods.filter((food)=> { return food.includes(searchValue) })
+    console.log(filteredFoods);
+    
+    if(filteredFoods.length === 0){
+       previewFoodsDiv.innerHTML = 'product doesnt exist' 
+    } else {
+    displayFoods(filteredFoods)
+    }  
+  }
+
+
+
+
+
+//   let string = 'jollof' 
+//  let arr =  string.split('')
+//  console.log(arr);
+ 
+  
+
+
+
+</script>
