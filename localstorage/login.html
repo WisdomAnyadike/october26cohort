@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Welcome Back!</h1>
+        <p>Log in to your account.</p>
+
+        <form id="loginForm">
+
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email">
+
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password">
+
+            <p id="loginMessage"></p>
+
+            <button type="button" onclick="login()">Log In</button>
+
+        </form>
+
+        <p>
+            Don't have an account?
+            <a href="index.html">Sign Up</a>
+        </p>
+
+    </div>
+
+</body>
+<script>
+
+    let allUsers = JSON.parse(localStorage.getItem('allUsersOct26')) || [] 
+       
+
+function login() {
+let email = document.getElementById('loginEmail').value.trim()
+let password = document.getElementById('loginPassword').value.trim()
+
+if (!email || !password) {
+     alert('all fields are mandatory ')
+} else {
+
+let foundUser = allUsers.find((user)=> { return user.email === email})
+let foundUserIndex = allUsers.findIndex((user)=> { return user.email === email})
+
+if (!foundUser) {
+    alert('user doesnt exist, try signing up!')
+} else {
+    if (foundUser.password !== password) {
+        alert('invalid credentrails')
+    } else {
+        alert('login successful')
+        localStorage.setItem('currentUserIndex' , JSON.stringify(foundUserIndex) )
+        window.location.href = 'dashboard.html'
+    }
+
+
+}
+
+
+}
+
+        
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</html>
+

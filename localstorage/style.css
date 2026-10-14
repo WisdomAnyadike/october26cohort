@@ -1,0 +1,425 @@
+/* =========================================================
+   BASE
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f5fb;
+    color: #172033;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+a {
+    color: #5367e8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   LOGIN / SIGNUP CARD
+   ========================================================= */
+
+.container {
+    background: white;
+    width: 100%;
+    max-width: 430px;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.container h1 {
+    text-align: center;
+    color: #172033;
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+.container > p {
+    text-align: center;
+    color: #737d91;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 18px;
+    color: #333d53;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dfe4ed;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    font-family: inherit;
+    background: #fff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #5367e8;
+    box-shadow: 0 0 0 3px rgba(83, 103, 232, 0.15);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #5367e8;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:hover {
+    background: #4053d4;
+}
+
+#message,
+#loginMessage,
+#postMessage {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #d9364f;
+}
+
+/* =========================================================
+   DASHBOARD / BLOG PAGE
+   ========================================================= */
+
+/* The dashboard is a full page, not a centered card */
+body.dashboard-page {
+    display: block;
+    padding: 0;
+}
+
+/* ---------- Top bar ---------- */
+
+.topbar {
+    background: white;
+    border-bottom: 1px solid #e6e9f2;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topbar-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #172033;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.brand:hover {
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: #5367e8;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.btn-logout {
+    width: auto;
+    margin-top: 0;
+    padding: 10px 18px;
+    font-size: 14px;
+    background: #fff;
+    color: #d9364f;
+    border: 1px solid #f3c4cb;
+}
+
+.btn-logout:hover {
+    background: #fff1f3;
+}
+
+/* ---------- Page wrapper ---------- */
+
+.blog-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 30px 20px 40px;
+}
+
+/* ---------- Welcome section ---------- */
+
+.welcome-card {
+    background: linear-gradient(135deg, #5367e8 0%, #7b8cff 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 25px rgba(83, 103, 232, 0.25);
+    margin-bottom: 25px;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.welcome-text h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.welcome-sub {
+    font-size: 14px;
+    opacity: 0.9;
+    overflow-wrap: anywhere;
+}
+
+.welcome-sub .dot {
+    margin: 0 6px;
+}
+
+/* ---------- Generic card ---------- */
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+    margin-bottom: 25px;
+}
+
+.card h2 {
+    font-size: 20px;
+    color: #172033;
+    margin-bottom: 6px;
+}
+
+.card-sub {
+    font-size: 14px;
+    color: #737d91;
+    margin-bottom: 10px;
+}
+
+/* ---------- New post form ---------- */
+
+.new-post form label:first-of-type {
+    margin-top: 10px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-publish {
+    width: auto;
+    padding: 12px 24px;
+    font-size: 14px;
+}
+
+/* ---------- Posts feed ---------- */
+
+.section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.section-head h2 {
+    font-size: 20px;
+    color: #172033;
+}
+
+.post-count {
+    font-size: 13px;
+    color: #737d91;
+    background: white;
+    border: 1px solid #e6e9f2;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.post {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+    border: 1px solid transparent;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.post:hover {
+    border-color: #dfe4ed;
+    transform: translateY(-2px);
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #eef0fd;
+    color: #5367e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.post-author {
+    font-size: 14px;
+    font-weight: bold;
+    color: #172033;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #737d91;
+    margin-top: 2px;
+}
+
+.post-title {
+    font-size: 18px;
+    color: #172033;
+    margin-bottom: 8px;
+}
+
+.post-body {
+    font-size: 14px;
+    color: #333d53;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Empty state ---------- */
+
+.empty-state {
+    background: white;
+    border: 2px dashed #dfe4ed;
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #737d91;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #737d91;
+    padding: 20px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+    }
+
+    .container h1 {
+        font-size: 24px;
+    }
+
+    .welcome-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 20px;
+    }
+
+    .welcome-text h1 {
+        font-size: 22px;
+    }
+
+    .card,
+    .post {
+        padding: 20px;
+    }
+
+    .btn-publish {
+        width: 100%;
+    }
+
+    .brand-name {
+        font-size: 16px;
+    }
+}

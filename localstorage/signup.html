@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Create Your Account</h1>
+      <p>Join us and get started today.</p>
+
+      <form id="signupForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" />
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="Confirm your password"
+        />
+
+        <p id="message"></p>
+
+        <button type="button" onclick="signup()">Sign Up</button>
+      </form>
+
+      <p>
+        Already have an account?
+        <a href="login.html">Log In</a>
+      </p>
+    </div>
+  </body>
+
+  <script>
+
+
+let allUsers = JSON.parse(localStorage.getItem('allUsersOct26')) || []
+
+
+
+function signup(params) {
+let username = document.getElementById('name').value.trim()
+let email = document.getElementById('email').value.trim()
+let password = document.getElementById('password').value.trim()
+let confirmPassword = document.getElementById('confirmPassword').value.trim()
+
+
+if (!username || !email || !password || !confirmPassword) {
+    alert('all fields are mandatory')
+}  else if ( allUsers.find((user)=> { return user.email === email  }) ){
+ alert ('user already exists ')
+}
+else if ( password !== confirmPassword ){
+     alert('passwords must match')
+} else if ( password < 8 ){
+     alert('password must be at least 8 characters')
+} else {
+
+    let user = {
+        username , 
+        email , 
+        password
+    }
+
+allUsers.push(user)
+localStorage.setItem('allUsersOct26' , JSON.stringify(allUsers) )
+alert('sign up successful')
+location.href = 'login.html'
+console.log(allUsers);
+
+}
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// localStorage.setItem( 'username' , JSON.stringify({name: 'wisdom'}))
+
+// let whatISaved =  JSON.parse(localStorage.getItem('username'))
+
+// console.log(whatISaved);
+
+// localStorage.removeItem('username')
+
+//  console.log(whatISaved);
+
+// localStorage.clear()
+
+// console.log(whatISaved);
+
+  </script>
+</html>

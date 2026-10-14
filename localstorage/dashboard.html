@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+
+    <!-- ===== Top bar ===== -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="dashboard.html" class="brand">
+                <span class="brand-mark">B</span>
+                <span class="brand-name">MyBlog</span>
+            </a>
+
+            <button id="logoutButton" class="btn-logout" type="button">Log Out</button>
+        </div>
+    </header>
+
+    <main class="blog-wrap">
+
+        <!-- ===== Welcome section ===== -->
+        <section class="welcome-card">
+            <div class="avatar" id="userAvatar">U</div>
+
+            <div class="welcome-text">
+                <h1 id="welcomeMessage">Welcome back!</h1>
+                <p class="welcome-sub">
+                    You are logged in as
+                    <strong id="userName">loading..</strong>
+                    <span class="dot">&middot;</span>
+                    <span id="userEmail">loading...</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== Create post section ===== -->
+        <section class="card new-post">
+            <h2>Write a new post</h2>
+            <p class="card-sub">Share what is on your mind with everyone.</p>
+
+            <form id="postForm">
+                <label for="postTitle">Title</label>
+                <input type="text" id="postTitle" placeholder="Give your post a title">
+
+                <label for="postContent">Content</label>
+                <textarea id="postContent" rows="5" placeholder="Write your post here..."></textarea>
+
+                <p id="postMessage"></p>
+
+                <div class="form-actions">
+                    <button type="submit" id="publishButton" class="btn-publish">Publish Post</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ===== Posts feed ===== -->
+        <section class="posts-section">
+            <div class="section-head">
+                <h2>Recent posts</h2>
+                <span class="post-count" id="postCount">2 posts</span>
+            </div>
+
+            <!-- Sample posts for design preview. JS can clear this container and render real posts here. -->
+            <div id="postsContainer" class="posts-list">
+
+                <article class="post">
+                    <div class="post-meta">
+                        <div class="post-avatar">J</div>
+                        <div>
+                            <p class="post-author">Jane Doe</p>
+                            <p class="post-date">14 Oct 2026</p>
+                        </div>
+                    </div>
+                    <h3 class="post-title">My first day learning JavaScript</h3>
+                    <p class="post-body">
+                        Today I learned how localStorage works and how to save a list of users
+                        in the browser. It was confusing at first, but now it makes sense.
+                    </p>
+                </article>
+
+                <article class="post">
+                    <div class="post-meta">
+                        <div class="post-avatar">S</div>
+                        <div>
+                            <p class="post-author">Samuel Okoro</p>
+                            <p class="post-date">13 Oct 2026</p>
+                        </div>
+                    </div>
+                    <h3 class="post-title">Why I love building with plain HTML and CSS</h3>
+                    <p class="post-body">
+                        No frameworks, no build tools. Just open the file in a browser and it works.
+                        There is something really satisfying about that.
+                    </p>
+                </article>
+
+            </div>
+
+            <!-- Shown when there are no posts. Give it the class "hidden" to hide it. -->
+            <div id="emptyState" class="empty-state hidden">
+                <p>No posts yet. Be the first to write one!</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 MyBlog. Built with HTML, CSS and JavaScript.</p>
+    </footer>
+
+</body>
+</html>
+<script>
+    let allUsers = JSON.parse(localStorage.getItem('allUsersOct26')) || []  
+    let currentUserIndex =  JSON.parse(localStorage.getItem('currentUserIndex'))
+    let currentUser = allUsers[currentUserIndex]
+
+
+    userName.innerHTML = currentUser.username
+    userEmail.innerHTML = currentUser.email
+
+
+
+
+
+
+</script>
