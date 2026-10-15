@@ -16,7 +16,7 @@
                 <span class="brand-name">MyBlog</span>
             </a>
 
-            <button id="logoutButton" class="btn-logout" type="button">Log Out</button>
+            <button id="logoutButton" class="btn-logout" onclick="logOut()" type="button">Log Out</button>
         </div>
     </header>
 
@@ -114,17 +114,39 @@
 </body>
 </html>
 <script>
-    let allUsers = JSON.parse(localStorage.getItem('allUsersOct26')) || []  
-    let currentUserIndex =  JSON.parse(localStorage.getItem('currentUserIndex'))
+    let allUsers = JSON.parse(localStorage.getItem('allUsersOct26')) || []   // []
+    let currentUserIndex =  JSON.parse(localStorage.getItem('currentUserIndex')) // 1
     let currentUser = allUsers[currentUserIndex]
 
 
-    userName.innerHTML = currentUser.username
-    userEmail.innerHTML = currentUser.email
+
+    function authenticateUser(params) {
+        if (!currentUser) {
+            location.href = 'login.html'
+        } else {
+       userName.innerHTML = currentUser.username
+        userEmail.innerHTML = currentUser.email
+        }    
+    }
+
+
+    authenticateUser()
 
 
 
+    function logOut() {
+     let canLogout = confirm('are you sure you want to logout?')
 
+     if (canLogout) {
+     localStorage.removeItem('currentUserIndex')
+      window.location.href = 'login.html'
+     }
+ 
+     
+        
+    }
+
+  
 
 
 </script>

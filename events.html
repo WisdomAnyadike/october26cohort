@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="hmm" > <i>hello</i> <b>class</b> </p>
+    <input type="text">
+    
+
+
+</body>
+</html>
+<script>
+
+
+function showEvent(ev) {
+    console.log(ev);
+    
+   ev.target.firstElementChild.style.color = 'pink'
+   ev.target.style.backgroundColor = 'purple'
+   
+    
+}
+
+function runThis(params) {
+     params.target.lastElementChild.style.color = 'green'  
+}
+
+function runThisOne(params) {
+     params.target.lastElementChild.style.color = 'black'  
+}
+
+
+
+
+
+let value = {
+    new: [ 0 , 
+    3 , 
+    {
+    1: 'shola' , 
+    2: ['sholzy' , 'mum' , 'bola'] , 
+    3: [{} , {val: 'semi '}]
+}
+]
+}
+
+
+
+let ptagg = document.querySelector('.hmm')
+console.log(ptagg);
+
+ptagg.addEventListener( 'mouseover' , runThis)
+ptagg.addEventListener( 'mouseleave' , runThisOne)
+ptagg.addEventListener( 'click' , showEvent)
+
+
+
+
+</script>
