@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="myButton" onclick="runFuctionality(event)" > click me </button>
+
+    <div id="preview">
+
+    </div>
+
+
+
+</body>
+</html>
+<script>
+ let button = document.getElementById('myButton')
+
+function runFuctionality(e) {
+    let div = document.getElementById("preview")
+    setLoading(true )
+   
+    setTimeout(() => {
+       setLoading(false )
+       div.innerHTML = 'you just clicked me'  
+    }, 3000);  
+    
+}
+
+
+ function setLoading(bool ) {
+   button.innerHTML = bool ? 'loading...'  : 'click me'
+   button.disabled = bool
+ } 
+
+
+
+
+
+
+//     console.log('hi');
+    
+
+//   console.log('whats up');
+
+//   for (let index = 0; index < 10000; index++) {
+  
+    
+//   }
+
+
+//   setTimeout(() => {
+//     console.log('hello');
+//     document.body.style.backgroundColor = 'purple'
+    
+//   }, 5000 );
+
+
+
+</script>
