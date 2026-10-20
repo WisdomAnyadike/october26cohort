@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   
+    
+</body>
+</html>
+<script>
+
+let count = 0
+
+let timeInterval =  setInterval(()=> {
+    if (count === 5) {
+        clearInterval(timeInterval)
+        return
+    }
+document.body.style.backgroundColor = genRandomRgbColors()
+count = count + 1
+} , 5000)
+
+
+function genRandomRgbColors() {
+    function r() {
+        return Math.floor(  Math.random() *  256 )
+    }
+
+  return  `rgb(${r()},${r()},${r()})` 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

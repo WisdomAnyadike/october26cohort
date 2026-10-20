@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <p id="num"> 10 </p> <button id="myButton"  onclick="runCountDown()"> start </button>
+
+
+</body>
+</html>
+<script>
+    let myButton = document.getElementById('myButton')
+    let num = document.getElementById('num')
+    let countDown = +num.innerHTML //10
+    let beginVal= +num.innerHTML //10
+
+
+    function runCountDown() {
+        setLoading(true)
+        // ev.target.innerHTML = 'loading...'
+        // ev.target.disabled = true
+
+
+        let timer = setInterval(() => {
+        if (countDown === 0) {
+          clearInterval(timer)
+          num.innerHTML = beginVal
+          countDown = beginVal
+          setLoading(false)
+        // ev.target.innerHTML = 'start'
+        // ev.target.disabled = false
+          alert('time up!')
+           return
+       }
+
+
+       countDown = countDown - 1
+            num.innerHTML = countDown
+
+
+
+            
+        }, 1000);
+        
+    }
+
+
+    function setLoading(bool) {
+        myButton.innerHTML = bool ? 'loading...' : 'start'
+        myButton.disabled = bool
+    }
+
+
+</script>
