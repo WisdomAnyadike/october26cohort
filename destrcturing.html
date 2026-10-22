@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: black;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    
+</body>
+</html>
+<script>
+
+// array destructuring 
+// array spreading ...
+
+let array = [1 , 2 ,3 , undefined , 5]
+let [tomato , two , val , four = 6 , five  , six = 20 ] = array
+// let one = 1
+// let two = 2
+// let three = 3
+// let four = 4
+// let five = 5
+console.log(tomato);
+tomato = 25
+console.log(tomato);
+console.log(five);
+console.log(six);
+console.log(four);
+
+
+
+
+
+
+function mulitplyBy5(params = 4 ) {
+    return params * 5
+}
+
+
+mulitplyBy5(5)
+mulitplyBy5(3)
+console.log(mulitplyBy5());
+
+
+let arr = [ 1, 2, 3]
+let copyArr = [ 0 , ...arr , 4 , 5]
+
+let [ first , ...others ] = arr
+
+  console.log(others);
+  
+
+  let fruitsAndVeges= [ 'cherry' , 'grape' , 'carrot' , 'ugwu' ]
+  let [fruit1 , fruit2 , ...veges] = fruitsAndVeges
+//   let fruit1 = 'cherry'
+//   let fruit2 = 'grape'
+//   let veges = [ 'carrot' , 'ugwu']
+console.log(veges);
+
+
+let nums = [ 3 , 4 , 5 , 1 , 9 , 6 , 7]
+nums.sort()
+console.log(nums);
+let lowestNum = nums[0]
+let highestNum = nums[nums.length - 1]
+
+
+let newArr = nums.slice(3 , 6)
+console.log(newArr);
+
+
+
+console.log(Math.min( ...nums ));
+
+console.log(Math.max(...nums));
+
+
+// obj destructuring  & spreading
+
+let student = {
+    name :'ekene', 
+    course : 'js'
+}
+
+
+let { course: c , name: studentName } = student
+console.log( c , studentName );
+
+
+function calculatePerimeter( {length :l , breadth: b } ) {
+     return 2 * ( l + b )
+} 
+
+let rectangle1 = {
+    length : 45 , 
+    breadth : 20
+}
+
+let rectangle2 = {
+    length : 25 , 
+    breadth : 599
+}
+
+console.log(calculatePerimeter(rectangle1));
+
+console.log(calculatePerimeter(rectangle2));
+
+const todoList = [
+{
+  task:'Prepare JS Test',
+  time:'4/1/2020 8:30',
+  completed:true
+},
+{
+  task:'Give JS Test',
+  time:'4/1/2020 10:00',
+  completed:false
+},
+{
+  task:'Assess Test Result',
+  time:'4/1/2020 1:00',
+  completed:false
+}
+]
+
+
+todoList.forEach(( {time , task } , i , arr )=> {
+
+ console.log( time , task);
+ 
+})
+
+
+let college = {
+    name : 'sqi' , 
+    studentsNumber : 4500
+}
+
+let copyCollege = {  ...college , name : 'vcc' }
+
+
+console.log(copyCollege);
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
