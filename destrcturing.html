@@ -94,8 +94,8 @@ let student = {
 }
 
 
-let { course: c , name: studentName } = student
-console.log( c , studentName );
+let { course , name } = student
+console.log( course , name );
 
 
 function calculatePerimeter( {length :l , breadth: b } ) {
@@ -135,11 +135,16 @@ const todoList = [
 ]
 
 
-todoList.forEach(( {time , task } , i , arr )=> {
+todoList.forEach(( { time  , task , completed } , i , arr )=> {
 
  console.log( time , task);
  
 })
+
+
+
+
+
 
 
 let college = {
