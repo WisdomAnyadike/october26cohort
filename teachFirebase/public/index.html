@@ -1,11 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banter - Group Chat Room</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-   welcome to firebase
+<body class="landing-page">
+
+    <!-- ===== Navbar ===== -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+                <span>Banter</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it works</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="pages/login.html" class="btn btn-ghost">Log in</a>
+                <a href="pages/signup.html" class="btn btn-primary">Get started</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== Hero ===== -->
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div class="hero-text">
+                    <span class="pill"><span class="pill-dot"></span> Real-time group chat, powered by Firebase</span>
+
+                    <h1>One room.<br><span class="gradient-text">Every voice.</span></h1>
+
+                    <p class="hero-sub">
+                        Banter is a simple, beautiful group chat room for your class, your team or your friends.
+                        Create an account in seconds and jump straight into the conversation.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="pages/signup.html" class="btn btn-primary btn-lg">
+                            Create free account
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                        <a href="pages/login.html" class="btn btn-ghost btn-lg">I have an account</a>
+                    </div>
+
+                    <div class="hero-social">
+                        <div class="avatar-stack">
+                            <span class="avatar" style="--avatar: #db2777">A</span>
+                            <span class="avatar" style="--avatar: #0e7490">T</span>
+                            <span class="avatar" style="--avatar: #b45309">K</span>
+                            <span class="avatar">+</span>
+                        </div>
+                        <p>Join your classmates in the conversation</p>
+                    </div>
+                </div>
+
+                <!-- Chat window preview (decoration only) -->
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="chat-preview">
+                        <div class="preview-header">
+                            <div class="window-dots"><span></span><span></span><span></span></div>
+                            <p class="preview-room"># general</p>
+                            <span class="online-count">24 online</span>
+                        </div>
+
+                        <div class="preview-body">
+                            <div class="message">
+                                <span class="avatar" style="--avatar: #db2777">A</span>
+                                <div class="message-content">
+                                    <div class="message-meta"><span class="message-author">Amaka</span><span class="message-time">10:02 AM</span></div>
+                                    <p class="message-text">Has anyone started the Firebase assignment? 👀</p>
+                                </div>
+                            </div>
+
+                            <div class="message">
+                                <span class="avatar" style="--avatar: #0e7490">T</span>
+                                <div class="message-content">
+                                    <div class="message-meta"><span class="message-author">Tunde</span><span class="message-time">10:03 AM</span></div>
+                                    <p class="message-text">Yes! Sign up is working. Doing the chat part now 🔥</p>
+                                </div>
+                            </div>
+
+                            <div class="message mine">
+                                <span class="avatar">Y</span>
+                                <div class="message-content">
+                                    <div class="message-meta"><span class="message-time">10:04 AM</span></div>
+                                    <p class="message-text">Same here, let's finish it tonight 🚀</p>
+                                </div>
+                            </div>
+
+                            <div class="message">
+                                <span class="avatar" style="--avatar: #b45309">K</span>
+                                <div class="typing"><span></span><span></span><span></span></div>
+                            </div>
+                        </div>
+
+                        <div class="preview-input">
+                            <span>Message #general</span>
+                            <span class="send-button">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="float-card float-card-1">
+                        <span class="float-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </span>
+                        <div><strong>Secure sign in</strong>Protected by Firebase Auth</div>
+                    </div>
+
+                    <div class="float-card float-card-2">
+                        <span class="float-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </span>
+                        <div><strong>Instant delivery</strong>No refresh needed</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== Features ===== -->
+        <section class="section" id="features">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Features</span>
+                    <h2>Everything a group chat needs. Nothing it doesn't.</h2>
+                    <p>Built with HTML, CSS, JavaScript and Firebase: fast, secure and simple.</p>
+                </div>
+
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <h3>Real-time messages</h3>
+                        <p>Messages show up for everyone the moment they are sent. No refreshing, no waiting.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </div>
+                        <h3>Secure accounts</h3>
+                        <p>Sign up and log in with your email and password. Only members can join the room.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3>One shared room</h3>
+                        <p>Everyone chats in the same room, so nobody misses a thing.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+                        </div>
+                        <h3>Works on any device</h3>
+                        <p>Looks great on phones, tablets and laptops. Chat from wherever you are.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== How it works ===== -->
+        <section class="section" id="how-it-works">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">How it works</span>
+                    <h2>Start chatting in three steps</h2>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-number">01</span>
+                        <h3>Create an account</h3>
+                        <p>Sign up with your name, email address and a password.</p>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">02</span>
+                        <h3>Log in</h3>
+                        <p>Use your details to get into your dashboard securely.</p>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">03</span>
+                        <h3>Say hello 👋</h3>
+                        <p>Type your first message and join the conversation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Call to action ===== -->
+        <section class="section section-cta">
+            <div class="container">
+                <div class="cta-card">
+                    <h2>Ready to join the conversation?</h2>
+                    <p>It takes less than a minute to create your account.</p>
+                    <a href="pages/signup.html" class="btn btn-light btn-lg">Get started for free</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="index.html" class="brand brand-sm">
+                <span class="brand-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+                <span>Banter</span>
+            </a>
+            <p>&copy; 2026 Banter. Built with HTML, CSS, JavaScript and Firebase.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room - Banter</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <div class="app">
+
+        <!-- ===== Top bar ===== -->
+        <header class="app-topbar">
+            <a href="dashboard.html" class="brand">
+                <span class="brand-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+                <span>Banter</span>
+            </a>
+
+            <div class="topbar-right">
+                <div class="user-chip">
+                    <span class="avatar" id="userAvatar">U</span>
+                    <div class="user-info">
+                        <p class="user-name" id="userName">Loading...</p>
+                        <p class="user-email" id="userEmail">loading...</p>
+                    </div>
+                </div>
+
+                <button type="button" id="logoutButton" class="btn btn-logout">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+                    <span>Log out</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="app-body">
+
+            <!-- ===== Sidebar (hidden on small screens) ===== -->
+            <aside class="sidebar">
+                <div>
+                    <p class="sidebar-label">Room</p>
+                    <div class="room-item">
+                        <span class="room-icon">#</span>
+                        <div>
+                            <p class="room-name">general</p>
+                            <p class="room-desc">Everyone is here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="sidebar-label">Members <span id="memberCount">4</span></p>
+
+                    <!-- Sample members for design preview. JS can clear this list and render real users here. -->
+                    <ul id="membersList" class="members-list">
+                        <li class="member"><span class="avatar avatar-sm" style="--avatar: #db2777">A</span>Amaka Obi</li>
+                        <li class="member"><span class="avatar avatar-sm" style="--avatar: #0e7490">T</span>Tunde Bakare</li>
+                        <li class="member"><span class="avatar avatar-sm" style="--avatar: #b45309">K</span>Kemi Adeyemi</li>
+                        <li class="member"><span class="avatar avatar-sm">Y</span>You</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- ===== Chat room ===== -->
+            <main class="chat">
+
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <span class="room-icon">#</span>
+                        <div>
+                            <h1>general</h1>
+                            <p>The group chat room for everyone</p>
+                        </div>
+                    </div>
+
+                    <span class="live-badge"><span class="live-dot"></span>Live</span>
+                </div>
+
+                <div class="chat-body">
+
+                    <!-- Sample messages for design preview. JS can clear this container and render real messages here.
+                         Give a message the class "mine" when the current user sent it. -->
+                    <div id="messagesContainer" class="chat-messages">
+
+                        <div class="day-divider">Today</div>
+
+                        <p class="system-message">Amaka joined the room</p>
+
+                        <div class="message">
+                            <span class="avatar" style="--avatar: #db2777">A</span>
+                            <div class="message-content">
+                                <div class="message-meta"><span class="message-author">Amaka Obi</span><span class="message-time">10:02 AM</span></div>
+                                <p class="message-text">Good morning everyone! ☀️ Has anyone started the Firebase assignment?</p>
+                            </div>
+                        </div>
+
+                        <div class="message">
+                            <span class="avatar" style="--avatar: #0e7490">T</span>
+                            <div class="message-content">
+                                <div class="message-meta"><span class="message-author">Tunde Bakare</span><span class="message-time">10:03 AM</span></div>
+                                <p class="message-text">Yes! I've finished sign up and login. Working on saving messages to Firestore now 🔥</p>
+                            </div>
+                        </div>
+
+                        <div class="message mine">
+                            <span class="avatar">Y</span>
+                            <div class="message-content">
+                                <div class="message-meta"><span class="message-author">You</span><span class="message-time">10:05 AM</span></div>
+                                <p class="message-text">Nice one Tunde! Remember to use onSnapshot so new messages show up without refreshing 😉</p>
+                            </div>
+                        </div>
+
+                        <div class="message">
+                            <span class="avatar" style="--avatar: #b45309">K</span>
+                            <div class="message-content">
+                                <div class="message-meta"><span class="message-author">Kemi Adeyemi</span><span class="message-time">10:07 AM</span></div>
+                                <p class="message-text">Thanks for the tip! 🙏</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Shown when there are no messages. Remove the class "hidden" to show it. -->
+                    <div id="emptyState" class="empty-state hidden">
+                        <div class="empty-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h3>No messages yet</h3>
+                        <p>Be the first to say hello! 👋</p>
+                    </div>
+
+                </div>
+
+                <!-- ===== Message composer ===== -->
+                <div class="composer">
+                    <div class="composer-box">
+                        <input type="text" id="messageInput" placeholder="Message #general" autocomplete="off" aria-label="Type a message">
+                        <button type="button" id="sendButton" class="send-button" aria-label="Send message">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+
+</body>
+</html>
