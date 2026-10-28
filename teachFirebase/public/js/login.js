@@ -9,6 +9,7 @@
 
  const app = firebase.initializeApp(firebaseConfig);
  const auth = firebase.auth();
+ var provider = new firebase.auth.GoogleAuthProvider();
 
 
  function logUserIn() {
@@ -19,11 +20,10 @@
     button.innerHTML = 'Loading...'
     button.disabled = true
 
-firebase.auth().signInWithEmailAndPassword(email, password)
+auth.signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     var user = userCredential.user;
     console.log(user);
-    
     alert('login successful')
     window.location.href = 'dashboard.html'
   })
@@ -36,4 +36,22 @@ firebase.auth().signInWithEmailAndPassword(email, password)
   });
 
 
+ }
+
+function signInWithGoogle() {
+   auth
+  .signInWithPopup(provider)
+  .then((result) => {
+    /** @type {firebase.auth.OAuthCredential} */
+    var credential = result.credential;
+    var token = credential.accessToken;
+    var user = result.user;
+    window.location.href = 'dashboard.html'
+  }).catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    var email = error.email;
+    var credential = error.credential;
+    alert(errorMessage)
+  });
  }
