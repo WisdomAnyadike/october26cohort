@@ -67,41 +67,12 @@
                      Give a message the class "mine" when the current user sent it. -->
                 <div id="messagesContainer" class="chat-messages">
 
-                    <div class="day-divider">Today</div>
+                    
+                   
 
-                    <p class="system-message">Amaka joined the classroom</p>
+                 
 
-                    <div class="message">
-                        <span class="avatar" style="--avatar: #db2777">A</span>
-                        <div class="message-content">
-                            <div class="message-meta"><span class="message-author">Amaka Obi</span><span class="message-time">10:02 AM</span></div>
-                            <p class="message-text">Good morning everyone! ☀️ Has anyone started the Firebase assignment?</p>
-                        </div>
-                    </div>
-
-                    <div class="message">
-                        <span class="avatar" style="--avatar: #0e7490">T</span>
-                        <div class="message-content">
-                            <div class="message-meta"><span class="message-author">Tunde Bakare</span><span class="message-time">10:03 AM</span></div>
-                            <p class="message-text">Yes! I've finished sign up and login. Working on saving messages to Firestore now 🔥</p>
-                        </div>
-                    </div>
-
-                    <div class="message mine">
-                        <span class="avatar">S</span>
-                        <div class="message-content">
-                            <div class="message-meta"><span class="message-author">You</span><span class="message-time">10:05 AM</span></div>
-                            <p class="message-text">Nice one Tunde! Remember to use onSnapshot so new messages show up without refreshing 😉</p>
-                        </div>
-                    </div>
-
-                    <div class="message">
-                        <span class="avatar" style="--avatar: #b45309">K</span>
-                        <div class="message-content">
-                            <div class="message-meta"><span class="message-author">Kemi Adeyemi</span><span class="message-time">10:07 AM</span></div>
-                            <p class="message-text">Thanks for the tip! 🙏</p>
-                        </div>
-                    </div>
+                    
 
                 </div>
 
@@ -120,7 +91,7 @@
             <div class="composer">
                 <div class="composer-box">
                     <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off" aria-label="Type a message">
-                    <button type="button" id="sendButton" class="send-button" aria-label="Send message">
+                    <button type="button" onclick="sendMessage()" id="sendButton" class="send-button" aria-label="Send message">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
                     </button>
                 </div>
